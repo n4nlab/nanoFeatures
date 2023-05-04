@@ -1,19 +1,23 @@
 # nanoFeatures
-MATLAB app to characterize nanoparticles imaged with super-resolution microscopy
+_MATLAB app to characterize nanoparticles imaged with super-resolution microscopy._
 
-Download and extract the attached zip, it contains the app and the secondary scripts I call from the main code, is important to keep all the files in the same folder. You need to open the “.mlapp” file and the the GUI will pop-up.
- 
+## Installation guide
+Clone or download all files in this repository to your local folder, it contains the app file (mlapp) and the secondary scripts called from the main code, is important to keep all the files in the same local folder. Click on the “.mlapp” file and the the GUI will pop-up.
+#
+In the first tab, you select the file(s) you want to analyze and the input type in the dropdown menu:
 
-In this screen, you select the file(s) you want to analyze and the input type in the dropdown menu:
-•	NIKON:
-o	Txt file format
-o	The app will read the file as a table and will detect the headers named “Channel_Name”, “X”, “Y” and “Frame”
-•	ONI:
-o	Csv file format
-o	The app will read the file as matrix and will get the 1st column as the channel name, 2nd column as frame number, 3rd column as X and 4th column as Y
-•	THUNDERSTORM:
-o	Csv file format
-o	The app will read the file as a table and will detect the headers named “Channel”, “Frame”, “x [nm]” and “y [nm]” 
+* NIKON:
+
+   Txt file format
+   The app will read the file as a table and will detect the headers named “Channel_Name”, “X”, “Y” and “Frame”
+*	ONI:
+
+   Csv file format
+   The app will read the file as matrix and will get the 1st column as the channel name, 2nd column as frame number, 3rd column as X and 4th column as Y
+*	THUNDERSTORM:
+
+   Csv file format
+   The app will read the file as a table and will detect the headers named “Channel”, “Frame”, “x [nm]” and “y [nm]” 
 
 For your STORM files you will most likely need the “NIKON” option. You can also select other filters:
 •	Density filter: as for now this is comented in the code (ignored), because it takes forever in matlab and is much faster to first density filter the images in thunderstorm (thus the thunderstorm option in the dropdown menu). Don’t use this option 😉
