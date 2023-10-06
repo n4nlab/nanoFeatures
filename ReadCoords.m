@@ -124,7 +124,7 @@ switch InputType
     case 'fiducials'
         %%%----- Read text file (check format)---
         disp('Importing fiducials data...');
-        dataMain=FileName;
+        dataMain=FileName(:,2:end);
            
         n=length(dataMain);
         A=zeros(n,3);

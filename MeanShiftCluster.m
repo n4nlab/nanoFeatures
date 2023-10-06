@@ -119,5 +119,3 @@ if nargout > 2
         cluster2dataCell{cN} = myMembers;
     end
 end
-
-
