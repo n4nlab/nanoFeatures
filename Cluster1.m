@@ -104,7 +104,11 @@ disp(strcat(['Found ' num2str(NClust647) ' clusters']));
 
 % Flag isolated Nanoparticles
 [D, ~] = pdist2(clustCent647',clustCent647','euclidean','Smallest',2); %calculate the 2 smallest distances (the smallest is 0, because comparing vector with itself)
-isolated647 = (D(2,:) >= MinClustDst); % logic array selecting clusters isolated, needed for Ellipse-Fit
+if (size(D,1) > 1)
+    isolated647 = (D(2,:) >= MinClustDst); % logic array selecting clusters isolated, needed for Ellipse-Fit
+else
+    isolated647 = true;
+end
 
 %%% Filter by localization number and elongation ==========================
  
@@ -162,7 +166,7 @@ disp(strcat( [num2str(length(AggregateMember)) ' clusters have been excluded bec
 disp(strcat(['Identified ' num2str(length(RightClust647)) ' nanoparticles candidates from ' num2str(NClust647) ' candidate clusters']));
 
 % plot (overlay) the localizations of aggregated clusters
-figure(2)
+figure
 hold on
 for i=1: length(Aggregates)
     AggregateData=[XCoords647(cell2mat(AggrMembr(i))), YCoords647(cell2mat(AggrMembr(i)))];
@@ -263,7 +267,7 @@ NPMembs=NPMembs(IndexToRemove); %remove discarded clusters, after size check
 
 disp('Creating output...');
 
-figure(2)
+figure
 title({'black ellipse: circle fitting';'red dots: selected-NP localiz, black dots: other localiz'});grid on;axis equal;
 hold on
 plot(XCoords647,YCoords647,'.k'); axis equal; hold on;
@@ -296,14 +300,6 @@ ClustSize=NPSize647; %how many MAIN Localizations are in each nanoparticle
 diam=R*2;
 
 %histograms of local and diameter:
-figure(3);hist(ClustSize,30);grid on;title('Number of 647 localizations/nanoparticle');
-figure(4);hist(R*2,10);grid on;title('Nanoparticle diam');
-figure(5);scatter(diam,ClustSize,'filled');grid on;title('Diameter/localizations');xlabel('Diameter (nm)');ylabel('Number of localizations');
-
-% optional: save results as text file:
-% save NPloc.out ClustSize -ascii
-% save NPdiam.out diam -ascii
-
-
-
-end
+% figure(3);hist(ClustSize,30);grid on;title('Number of 647 localizations/nanoparticle');
+% figure(4);hist(R*2,10);grid on;title('Nanoparticle diam');
+% figure(5);scatter(diam,ClustSize,'filled');grid on;title('Diameter/localizations');xlabel('Diameter (nm)')
