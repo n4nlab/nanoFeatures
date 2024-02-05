@@ -5,6 +5,8 @@ _MATLAB app to characterize nanoparticles imaged with super-resolution microscop
 
 ## Installation guide
 Clone or download all files in this repository to your local folder, it contains the app file (mlapp) and the secondary scripts called from the main code, is important to keep all the files in the same local folder. Click on the “.mlapp” file and the the GUI will pop-up.
+
+The __standalone version__ can be installed via MATLAB Runtime _(without the need for a Matlab license)_ on multiple platforms like Linux, macOS, and Windows.
 #
 ## Usage
 In the first tab, you select the file(s) you want to analyze and the input type in the dropdown menu:
