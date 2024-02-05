@@ -21,3 +21,7 @@ In the parameters tab you can choose the correct ones for your images. After opt
 To speed up the clustering algorithm, I divide the image in 9 sections and analyze it in parallel (the algorithm will check how many cores does your machine have and use as many as possible, with a limit on 9). 
 #
 Finally, in the graphs tab you will find histograms of the features for only one of the sections of the image, and it will save a csv file in your matlab path folder containing the features (size, aspect ratio, total number of localizations and localizations per channel) for your file(s).
+
+## LICENSE
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
