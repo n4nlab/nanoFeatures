@@ -1,6 +1,8 @@
 # nanoFeatures
 _MATLAB app to characterize nanoparticles imaged with super-resolution microscopy._
 
+[Manuscript](https://www.biorxiv.org/content/10.1101/2024.02.12.579898v1)
+
 [Manuscript datasets](https://zenodo.org/records/10610875 "nanoFeatures datasets")
 
 ## Installation guide
